@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <div>
       <nav className="bg-white border-gray-200 border-b">
-        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+        <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">
           <div className="flex gap-2 items-center">
             <Link to="/" className="flex items-center">
               <img className="md:w-[14f0px] w-[120px]" src={logo} alt="logo" />
@@ -37,8 +37,7 @@ const Navbar = () => {
             </ul>
             <button
               onClick={() => setOpen(!open)}
-              className="text-black focus:ring-4 focus:ring-blue-300 md:hidden block font-medium md:ml-6 rounded-lg text-sm p-2  focus:outline-none "
-            >
+              className="text-black focus:ring-4 focus:ring-blue-300 md:hidden block font-medium md:ml-6 rounded-lg text-sm p-2 focus:shadow-none focus:border-none focus:outline-none ">
               <AiOutlineMenu className="text-2xl font-bold" />
             </button>
           </div>
