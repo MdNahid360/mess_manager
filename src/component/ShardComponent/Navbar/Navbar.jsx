@@ -5,7 +5,7 @@ import {
   AiOutlineMenu,
 } from "react-icons/ai";
 import { Link } from "react-router-dom";
-
+import logo from '../../../assets/img/logo.png'
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   return (
@@ -14,9 +14,7 @@ const Navbar = () => {
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <div className="flex gap-2 items-center">
             <Link to="/" className="flex items-center">
-              <span className="self-center text-2xl font-semibold whitespace-nowrap text-black">
-                Logo
-              </span>
+              <img className="md:w-[14f0px] w-[120px]" src={logo} alt="logo" />
             </Link>
           </div>
           <div className="flex items-center">
