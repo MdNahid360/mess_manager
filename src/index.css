@@ -3,14 +3,19 @@
 @tailwind utilities;
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  /* color-scheme: light dark; */
+  /* font-family: 'Afacad', sans-serif; */
+  /* font-family: 'DM Serif Display', serif; */
+  /* font-family: 'Inter', sans-serif; */
+  /* font-family: 'Merienda', cursive; */
+  /* font-family: 'Nunito', sans-serif; */
+  font-family: 'Poppins', sans-serif;
+  /* font-family: 'Roboto Mono', monospace; */
+  /* font-family: 'Rubik', sans-serif; */
+  /* font-family: 'Ubuntu', sans-serif; */
   color: rgba(0, 0, 0, 0.87);
   background-color: #F6F5F9;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
