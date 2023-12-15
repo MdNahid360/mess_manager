@@ -16,6 +16,7 @@ The project is built using the following technologies:
 - Framer Motion
 - Tailwind CSS
 - React Flowbite
+- Material tailwind
 
 ## Packages Used
 

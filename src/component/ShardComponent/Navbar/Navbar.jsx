@@ -1,76 +1,88 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
-  AiOutlineDashboard,
-  AiOutlineHome,
   AiOutlineMenu,
 } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import logo from '../../../assets/img/logo.png'
-const Navbar = () => {
-  const [open, setOpen] = useState(false);
+import logo from '../../../assets/img/logo.png';
+import logoLight from '../../../assets/img/Group 82.png';
+import { IoMdClose } from "react-icons/io";
+import { Avatar, Dropdown, Navbar } from 'flowbite-react';
+import { AuthContext } from "../../../context/AuthProvider";
+import { FaRegUser } from "react-icons/fa";
+import { IconButton } from "@material-tailwind/react";
+import { BsMoonStars } from "react-icons/bs";
+import { MdOutlineWbSunny } from "react-icons/md";
+import { IoPower } from "react-icons/io5";
+
+const NavBar = () => {
+  const { open, setOpen, themeButton, setThemeButton, themeAction, theme,setTheme } = useContext(AuthContext);
+  const darkMode = () => {
+    setThemeButton(!themeButton)
+    themeAction('dark')
+  }
+  const lightMode = () => {
+    setThemeButton(!themeButton)
+    themeAction('light')
+  }
   return (
     <div>
-      <nav className="bg-white border-gray-200 border-b">
+      <nav className={`${theme ? 'bg-[#191d29] border-gray-700' : 'bg-white border-gray-100'} duration-300 border-gray-200 border-b`}>
         <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">
           <div className="flex gap-2 items-center">
             <Link to="/" className="flex items-center">
-              <img className="md:w-[14f0px] w-[120px]" src={logo} alt="logo" />
+             {theme ? <img className={` md:w-[14f0px] w-[120px]`} src={logoLight} alt="logo" /> : <img className={` md:w-[14f0px] w-[120px]`} src={logo} alt="logo" />}
             </Link>
           </div>
           <div className="flex items-center">
-            <ul className="md:flex hidden text-black gap-4 items-center ">
+            <ul className="flex text-black gap-4 items-center ">
               <li>
-                <Link to="/" className="btn text-black text-lg px-4 py-2">
-                  Home
-                </Link>
+                {
+                  !theme ?  <IconButton onClick={darkMode} className={`${theme ? 'bg-[#ffffff0c] text-blue-400' : ''}  relative rounded-full mr-3`}>
+                      <BsMoonStars className="text-lg   w-full h-full" /> 
+                </IconButton> :  <IconButton onClick={lightMode} className={`${theme ? 'bg-[#ffffff0c] text-blue-400' : ''}  relative rounded-full mr-3`}>
+                    <MdOutlineWbSunny className="text-lg  w-full h-full" />
+                </IconButton>
+                }
+               
+               
               </li>
-              <li>
-                <Link to="/" className="btn text-black text-lg px-4 py-2">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link to="/" className="btn text-black text-lg px-4 py-2">
-                  Blog
-                </Link>
-              </li>
+              
             </ul>
+
+            <Dropdown
+              className={`${theme ? 'bg-[#1b232c] text-white  border border-gray-700' : 'bg-white text-black shadow-[#b8b6b6]'} px-2 pb-2   w-[240px] shadow-xl `}
+              arrowIcon={false}
+              inline
+              label={
+                <Avatar className={`${theme ? 'border border-dashed border-blue-500' : ''} rounded-full`} alt="User settings" img="https://avatars.githubusercontent.com/u/76812306?v=4" rounded />
+              }
+            >
+              <Dropdown.Header  className="pb-1">
+                <img src="https://avatars.githubusercontent.com/u/76812306?v=4" className="w-[80px] border border-dashed border-blue-500 rounded-md m-auto h-[80px]" alt="" />
+                <div className="text-center mt-2">
+                    <span className={`${theme ? 'text-white' : 'text-black'} block truncate text-md font-medium`}>Md Nahid</span>
+                <span className={`${theme ? 'text-gray-400' : 'text-gray-600'} block  text-sm`}>nahid@gmail.com</span>
+              </div>
+              </Dropdown.Header>
+               
+              <Dropdown.Item className="p-0 rounded-md mt-3"><button className="text-white rounded-md hover:bg-blue-600 duration-200 bg-blue-500 w-full h-[40px] flex items-center justify-center px-3 gap-2"><FaRegUser className="text-md" /> Profile</button></Dropdown.Item>
+              <Dropdown.Item className="p-0 rounded-md mt-2"><button className="text-white rounded-md hover:bg-blue-600 duration-200 bg-blue-500 w-full h-[40px] flex items-center justify-center gap-2"><IoPower className="text-lg" /> Sign out</button></Dropdown.Item>
+            </Dropdown>
+
             <button
               onClick={() => setOpen(!open)}
-              className="text-black focus:ring-4 focus:ring-blue-300 md:hidden block font-medium md:ml-6 rounded-lg text-sm p-2 focus:shadow-none focus:border-none focus:outline-none ">
-              <AiOutlineMenu className="text-2xl font-bold" />
+              className="focus:ring-4 ml-3 focus:ring-transparent md:hidden block font-medium md:ml-6 rounded-lg text-sm p-2 focus:shadow-none focus:border-none focus:outline-none ">
+              {
+                !open ? <AiOutlineMenu className={`${theme ? 'text-white' : 'text-black'} text-2xl font-bold`} /> : <IoMdClose className={`${theme ? 'text-white' : 'text-black'} text-2xl font-bold`} />
+              }
+
             </button>
           </div>
         </div>
       </nav>
-      <div
-        className={`${
-          open ? "h-[100vh]" : " h-0"
-        } bg-[#00000032] fixed overflow-hidden duration-300 w-full`}
-      >
-        <div className={`bg-white text-black p-4`}>
-          <ul>
-            <li className="relative">
-              <Link
-                className=" pr-3 font-semibold py-2 rounded flex items-center gap-2"
-                to="/"
-              >
-                <AiOutlineHome className="text-2xl " /> Home
-              </Link>
-            </li>
-            <li className="relative mt-6">
-              <Link
-                className=" pr-3 font-semibold py-2 rounded flex items-center gap-2"
-                to="/"
-              >
-                <AiOutlineDashboard className="text-2xl " /> Dashboard
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </div>
+
     </div>
   );
 };
 
-export default Navbar;
+export default NavBar;
