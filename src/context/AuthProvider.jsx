@@ -15,14 +15,17 @@ const AuthProvider = ({ children }) => {
   }
   const getTheme = localStorage.getItem('theme');
   useEffect(() => {
-     if (getTheme === 'dark') {
+    if (getTheme === 'dark') {
+       
     setTheme(true);
  } else if (getTheme === 'light') {
    setTheme(false);
  }
   })
 
-  console.log(theme);
+   useEffect(() => {
+    document.body.style.backgroundColor = theme ? '#1e1e1e' : '#ffffff';
+  }, [theme]);
   const info = {
     setSideBarOn,
     sideBarOn,

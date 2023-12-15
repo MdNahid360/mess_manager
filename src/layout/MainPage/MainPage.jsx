@@ -54,6 +54,7 @@ const MainPage = () => {
     setEndOpa(true)
   }, 0)
   // ? time is 4s
+
   return (
     <>
       {loader ?
