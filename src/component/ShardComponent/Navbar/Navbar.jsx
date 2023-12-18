@@ -71,7 +71,7 @@ const NavBar = () => {
 
             <button
               onClick={() => setOpen(!open)}
-              className="focus:ring-4 ml-3 focus:ring-transparent md:hidden block font-medium md:ml-6 rounded-lg text-sm p-2 focus:shadow-none focus:border-none focus:outline-none ">
+              className="focus:ring-4 ml-3 focus:ring-transparent lg:hidden block font-medium md:ml-6 rounded-lg text-sm p-2 focus:shadow-none focus:border-none focus:outline-none ">
               {
                 !open ? <AiOutlineMenu className={`${theme ? 'text-white' : 'text-black'} text-2xl font-bold`} /> : <IoMdClose className={`${theme ? 'text-white' : 'text-black'} text-2xl font-bold`} />
               }

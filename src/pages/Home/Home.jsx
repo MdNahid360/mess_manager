@@ -24,7 +24,7 @@ const Home = () => {
     //? max-w-screen-xl overflow-hidden bg-white m-auto py-12
     <div className="">
       {/*? content */}
-      <div className="grid md:grid-cols-3 grid-cols-1 gap-3">
+      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3">
         <div className="">
           <DisplayCart
             img={displayVector[0]}
