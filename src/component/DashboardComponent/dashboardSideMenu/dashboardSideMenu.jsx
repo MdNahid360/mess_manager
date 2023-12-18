@@ -9,15 +9,15 @@ import {
     Chip,
 } from "@material-tailwind/react";
 import { AiOutlineDashboard } from "react-icons/ai";
-import i1 from '../../../../assets/icons/001-clipbboard.png';
-import i2 from '../../../../assets/icons/002-letter.png';
-import i3 from '../../../../assets/icons/003-social-media.png';
-import i4 from '../../../../assets/icons/007-team.png';
-import i5 from '../../../../assets/icons/Rectangle 8.png';
-import i6 from '../../../../assets/icons/Rectangle 9.png';
-import i7 from '../../../../assets/icons/Rectangle 10.png';
+import i1 from '../../../assets/icons/001-clipbboard.png';
+import i2 from '../../../assets/icons/002-letter.png';
+import i3 from '../../../assets/icons/003-social-media.png';
+import i4 from '../../../assets/icons/007-team.png';
+import i5 from '../../../assets/icons/Rectangle 8.png';
+import i6 from '../../../assets/icons/Rectangle 9.png';
+import i7 from '../../../assets/icons/Rectangle 10.png';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../../../../context/AuthProvider';
+import { AuthContext } from '../../../context/AuthProvider';
 
 const DashboardSideMenu = () => {
     const {theme} = useContext(AuthContext);

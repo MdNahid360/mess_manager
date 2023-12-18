@@ -8,9 +8,8 @@ import { TypeAnimation } from 'react-type-animation';
 import overlay from '../../assets/img/overlay.jpg'
 import overlaySm from '../../assets/img/overflow_sm.jpg'
 import NavBar from "../../component/ShardComponent/Navbar/Navbar";
-import dashboardSideMenu from '../../component/DashboardComponent/Users/dashboardSideMenu/dashboardSideMenu';
-import DashboardSideMenu from "../../component/DashboardComponent/Users/dashboardSideMenu/dashboardSideMenu";
-//? framer motions effect variants
+import DashboardSideMenu from "../../component/DashboardComponent/dashboardSideMenu/dashboardSideMenu";
+ //? framer motions effect variants
 const imgPup = {
   visible: {
     opacity: 0,
@@ -194,7 +193,7 @@ const MainPage = () => {
 
             {/* Main Content */}
             <main className="flex-1 flex flex-col overflow-hidden">
-              <div className={`${theme ? 'bg-[#242730] text-white' : 'bg-gray-100 text-black'} duration-300 flex-1 overflow-x-hidden overflow-y-scroll  p-6`}>
+              <div className={`${theme ? 'bg-[#242730] text-white' : 'bg-gray-100 text-black'} duration-300 flex-1 overflow-x-hidden overflow-y-scroll  md:p-6 p-3`}>
                 <Outlet />
               </div>
             </main>

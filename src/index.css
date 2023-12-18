@@ -46,3 +46,7 @@
 .scroll-y-style ,::-webkit-scrollbar-thumb:hover {
   background: #01529e; 
 }
+
+.text-color-primary{
+  color: #353F5B;
+}
