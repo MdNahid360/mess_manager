@@ -39,7 +39,7 @@ const MainPage = () => {
   const [loader, setLoader] = useState(true);
   const [endLoad, setEndLoad] = useState(false);
   const [endOps, setEndOpa] = useState(false);
-    const {open, setOpen, theme} = useContext(AuthContext);
+  const {open, setOpen, theme} = useContext(AuthContext);
 
   setTimeout(() => {
     setLoader(false)
@@ -161,7 +161,6 @@ const MainPage = () => {
                   }}
                   className="text-white"> <span className="text-blue-400">মেস ম্যানেজারে</span> আপনাকে স্বাগতম </motion.h2>
               </div>
-
               {
                 <div className={`${endOps ? 'opacity-0 duration-200' : ''}`}>
                   <TypeAnimation
@@ -185,7 +184,7 @@ const MainPage = () => {
           <NavBar />
 
           <div className="flex lg:h-[90vh] md:h-screen overflow-hidden mt-[70px]">
-            <aside className={`${open ?'lg:w-0 md:w-64 w-64':'lg:w-64 md:w-0 w-0' } ${theme ? 'bg-[#0f121c]' : 'bg-white'} duration-200 block md:relative fixed h-screen overflow-y-auto lg:block`}>
+            <aside className={`${open ?'lg:w-0 md:w-64 w-64':'lg:w-64 md:w-0 w-0' } ${theme ? 'bg-[#0f121c]' : 'bg-white'} duration-200 block md:relative fixed h-screen overflow-y-auto lg:block z-[2000]`}>
               <div className="p-4  ">
                  <DashboardSideMenu />
               </div>

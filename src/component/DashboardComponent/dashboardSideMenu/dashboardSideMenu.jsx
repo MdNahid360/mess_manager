@@ -60,8 +60,8 @@ const DashboardSideMenu = () => {
         },
     ]
     return (
-        <div className=' '>
-            <div className={`${theme ? 'border-gray-700' : 'border-gray-400'} mb-2 border-b pb-2`}>
+        <div className=''>
+            <div className={`${theme ? 'border-gray-700' : 'border-gray-400'} mb-2 border-b pb-2 `}>
                 <Typography variant="h5" className={`${theme ? 'text-white' : 'text-black'}`}>
                     মেনু
                 </Typography>
