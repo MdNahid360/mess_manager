@@ -26,11 +26,11 @@ const NavBar = () => {
   }
   return (
     <div>
-      <nav className={`${theme ? 'bg-[#191d29] border-gray-700' : 'bg-white border-gray-100'} duration-300 border-gray-200 fixed top-0 w-full mt-0 z-10 border-b`}>
+      <nav className={`${theme ? 'bg-[#191d29] border-gray-700' : 'bg-white border-gray-100'} duration-300 border-gray-200 fixed w-full mt-0 z-10 border-b`}>
         <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">
           <div className="flex gap-2 items-center">
             <Link to="/" className="flex items-center">
-             {theme ? <img className={` md:w-[14f0px] w-[120px]`} src={logoLight} alt="logo" /> : <img className={` md:w-[14f0px] w-[120px]`} src={logo} alt="logo" />}
+             {theme ? <img className={` md:w-[140px] w-[120px]`} src={logoLight} alt="logo" /> : <img className={` md:w-[14f0px] w-[120px]`} src={logo} alt="logo" />}
             </Link>
           </div>
           <div className="flex items-center">
@@ -43,8 +43,6 @@ const NavBar = () => {
                     <MdOutlineWbSunny className="text-lg  w-full h-full" />
                 </IconButton>
                 }
-               
-               
               </li>
               
             </ul>
@@ -56,10 +54,10 @@ const NavBar = () => {
               label={
                 <div className="flex items-center gap-2 ">
                   <Avatar className={`${theme ? 'border border-dashed border-blue-500' : ''} rounded-full`} alt="User settings" img="https://avatars.githubusercontent.com/u/76812306?v=4" rounded />
-                   <span className="flex flex-col gap-0 items-start">
+                   {/* <span className="flex flex-col gap-0 items-start">
                     <h5 className={theme ? 'text-gray-200' : 'text-black' }> Nahid</h5>
                     <p className="text-[13px] text-gray-400">Manager</p>
-                  </span>
+                  </span> */}
                 </div>
               }
             >

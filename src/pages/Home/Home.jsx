@@ -48,7 +48,7 @@ const Home = () => {
             img={displayVector[5]}
             subtitle="মোট মিল "
             price="5000"
-            bg="#22f40024"
+            bg="#22f40014"
             color="#22F400"
           />  
         </div>

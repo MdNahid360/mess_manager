@@ -71,7 +71,7 @@ const DashboardSideMenu = () => {
                 {
                     linkData?.map((itm) =>
                         <Link className='w-full  relative h-[40px] rounded-xl mt-2' key={itm?.icon} to={itm?.link}>
-                            <Button className={`${theme ? 'text-blue-300 hover:bg-gray-800 hover:text-blue-400' : 'text-blue-900 hover:bg-gray-100 hover:text-blue-700'} w-full h-full text-md mb-3 flex items-center px-1 py-0  gap-2 hover:rounded duration-200`}>
+                            <Button className={`${theme ? 'text-gray-500 hover:bg-gray-800 hover:text-blue-400' : 'text-blue-900 hover:bg-gray-100 hover:text-blue-700 bg-transparent shadow-none'} w-full h-full text-md mb-3 flex items-center px-1 py-0  gap-2 hover:rounded duration-200`}>
                                 <ListItem className='flex gap-3'>
                                     <ListItemPrefix>
                                         <img src={itm?.icon} className="text-2xl" />
