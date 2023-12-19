@@ -184,12 +184,12 @@ const MainPage = () => {
         <div className="overflow-hidden">
           <NavBar />
 
-          <div className="flex lg:h-[89.4vh] md:h-screen overflow-hidden ">
+          <div className="flex lg:h-[90vh] md:h-screen overflow-hidden mt-[70px]">
             <aside className={`${open ?'lg:w-0 md:w-64 w-64':'lg:w-64 md:w-0 w-0' } ${theme ? 'bg-[#0f121c]' : 'bg-white'} duration-200 block md:relative fixed h-screen overflow-y-auto lg:block`}>
-              <div className="p-4">
+              <div className="p-4  ">
                  <DashboardSideMenu />
               </div>
-            </aside>
+             </aside>
 
             {/* Main Content */}
             <main className="flex-1 flex flex-col overflow-hidden">

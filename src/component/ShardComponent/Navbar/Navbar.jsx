@@ -26,7 +26,7 @@ const NavBar = () => {
   }
   return (
     <div>
-      <nav className={`${theme ? 'bg-[#191d29] border-gray-700' : 'bg-white border-gray-100'} duration-300 border-gray-200 border-b`}>
+      <nav className={`${theme ? 'bg-[#191d29] border-gray-700' : 'bg-white border-gray-100'} duration-300 border-gray-200 fixed top-0 w-full mt-0 z-10 border-b`}>
         <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">
           <div className="flex gap-2 items-center">
             <Link to="/" className="flex items-center">
@@ -54,7 +54,13 @@ const NavBar = () => {
               arrowIcon={false}
               inline
               label={
-                <Avatar className={`${theme ? 'border border-dashed border-blue-500' : ''} rounded-full`} alt="User settings" img="https://avatars.githubusercontent.com/u/76812306?v=4" rounded />
+                <div className="flex items-center gap-2 ">
+                  <Avatar className={`${theme ? 'border border-dashed border-blue-500' : ''} rounded-full`} alt="User settings" img="https://avatars.githubusercontent.com/u/76812306?v=4" rounded />
+                   <span className="flex flex-col gap-0 items-start">
+                    <h5 className={theme ? 'text-gray-200' : 'text-black' }> Nahid</h5>
+                    <p className="text-[13px] text-gray-400">Manager</p>
+                  </span>
+                </div>
               }
             >
               <Dropdown.Header  className="pb-1">
