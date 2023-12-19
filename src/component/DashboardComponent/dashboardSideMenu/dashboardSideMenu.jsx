@@ -18,9 +18,10 @@ import i6 from '../../../assets/icons/Rectangle 9.png';
 import i7 from '../../../assets/icons/Rectangle 10.png';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider';
+import { Button } from "@material-tailwind/react";
 
 const DashboardSideMenu = () => {
-    const {theme} = useContext(AuthContext);
+    const { theme } = useContext(AuthContext);
     const linkData = [
         {
             icon: i5,
@@ -69,13 +70,15 @@ const DashboardSideMenu = () => {
 
                 {
                     linkData?.map((itm) =>
-                        <Link key={itm?.icon} to={itm?.link}>
-                            <ListItem className={`${theme ? 'text-blue-300 hover:bg-gray-800 hover:text-blue-400' : 'text-blue-900 hover:bg-gray-100 hover:text-blue-700'} text-md mb-3 flex items-center   gap-2 px-2 py-2  hover:rounded duration-200`}>
-                                <ListItemPrefix>
-                                    <img src={itm?.icon} className="text-2xl" />
-                                </ListItemPrefix>
-                                {itm?.name}
-                            </ListItem>
+                        <Link className='w-full ' key={itm?.icon} to={itm?.link}>
+                            <Button className={`${theme ? 'text-blue-300 hover:bg-gray-800 hover:text-blue-400' : 'text-blue-900 hover:bg-gray-100 hover:text-blue-700'} w-full text-md mb-3 flex items-center px-1 py-0  gap-2 hover:rounded duration-200`}>
+                                <ListItem >
+                                    <ListItemPrefix>
+                                        <img src={itm?.icon} className="text-2xl" />
+                                    </ListItemPrefix>
+                                    {itm?.name}
+                                </ListItem>
+                            </Button>
                         </Link>
                     )
                 }
