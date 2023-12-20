@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { AuthContext } from "../../context/AuthProvider";
 import Footer from "../../component/ShardComponent/Footer/Footer";
@@ -9,7 +9,10 @@ import overlay from '../../assets/img/overlay.jpg'
 import overlaySm from '../../assets/img/overflow_sm.jpg'
 import NavBar from "../../component/ShardComponent/Navbar/Navbar";
 import DashboardSideMenu from "../../component/DashboardComponent/dashboardSideMenu/dashboardSideMenu";
- //? framer motions effect variants
+import ReactAudioPlayer from 'react-audio-player';
+
+import intro from '../../assets/intro.mp3'
+//? framer motions effect variants
 const imgPup = {
   visible: {
     opacity: 0,
@@ -43,18 +46,19 @@ const MainPage = () => {
 
   setTimeout(() => {
     setLoader(false)
-  }, 60)
+  }, 6000)
 // ? time is 6s
   setTimeout(() => {
     setEndLoad(true)
-  }, 0)
+  }, 5000)
 // ? time is 5s
   setTimeout(() => {
     setEndOpa(true)
-  }, 0)
+  }, 4000)
   // ? time is 4s
+ 
 
-  return (
+   return (
     <>
       {loader ?
         <AnimatePresence mode="wait">
@@ -145,6 +149,7 @@ const MainPage = () => {
                 exit="exit"
                 src={logo} alt="" />
               <div className={`${endOps ? 'scale-[0] opacity-0 duration-200' : ''} md:mt-12 mt-8 flex items-center gap-2 md:text-2xl text-xl font-bold`}>
+       
                 <motion.h2
                   variants={textShow}
                   initial="visible"
@@ -161,6 +166,8 @@ const MainPage = () => {
                   }}
                   className="text-white"> <span className="text-blue-400">মেস ম্যানেজারে</span> আপনাকে স্বাগতম </motion.h2>
               </div>
+            
+
               {
                 <div className={`${endOps ? 'opacity-0 duration-200' : ''}`}>
                   <TypeAnimation
@@ -174,6 +181,7 @@ const MainPage = () => {
                     className={`${endOps ? 'opacity-0 duration-300' : 'opacity-100 duration-300'} text-white block text-2xl`}
                     repeat={Infinity}
                   />
+                 
                 </div>
               }
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react"; 
+import React, { useEffect, useRef, useState } from "react"; 
 import DisplayCart from "../../component/DashboardComponent/displayCart/displayCart";
 import deposit from '../../assets/img/dashboardCart/004-savings.png'
 import member from '../../assets/img/dashboardCart/004-savings.png'
@@ -7,8 +7,10 @@ import market from '../../assets/img/dashboardCart/004-savings.png'
 import perMeal from '../../assets/img/dashboardCart/004-savings.png'
 import houseKeeper from '../../assets/img/dashboardCart/004-savings.png' 
 import MembersTable from "../../component/DashboardComponent/membersTable/membersTable";
- 
-const Home = () => {
+import ReactAudioPlayer from 'react-audio-player';
+import intro from '../../assets/intro.mp3'
+
+ const Home = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const closeMenu = () => setIsMenuOpen(false);
   const displayVector = [
@@ -84,6 +86,11 @@ const Home = () => {
       </div>
       {/* 2nd content */} 
       <br />
+                <ReactAudioPlayer
+  src={intro}
+  autoPlay="true"
+  controls
+/>
       <MembersTable />
     </div>
   );
