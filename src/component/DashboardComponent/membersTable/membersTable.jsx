@@ -15,9 +15,8 @@ const MembersTable = () => {
                     মিলের তালিকা
                 </h2>
                 <div className="flex  md:flex-row flex-col items-center md:gap-3 bg-red gap-2">
-                    <Datepicker style={{ backgroundColor: theme ? '#162225fa' : 'white', color: theme ? 'white' : 'black' }} />
-                    <div style={{ backgroundColor: theme ? '#162225fa' : 'white', color: theme ? 'white' : 'black', }} className={`${theme ? 'border border-gray-200' : ''} flex items-center rounded-lg px-2`}>
-
+                    <Datepicker style={{width : '280px', backgroundColor: theme ? '#162225fa' : 'white', color: theme ? 'white' : 'black' }} />
+                    <div style={{ backgroundColor: theme ? '#162225fa' : 'white', color: theme ? 'white' : 'black', }} className={`${theme ? 'border border-gray-200' : ''} w-[280px] flex items-center rounded-lg px-2`}>
                         <IoSearch />
                         <input type="text" className="border-none bg-transparent focus:border-0 focus:ring-0 focus:outline-none" placeholder='Search member...' />
                     </div>

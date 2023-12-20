@@ -19,6 +19,7 @@ import i7 from '../../../assets/icons/Rectangle 10.png';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider';
 import { Button } from "@material-tailwind/react";
+import { IoPower } from 'react-icons/io5';
 
 const DashboardSideMenu = () => {
     const { theme } = useContext(AuthContext);
@@ -60,30 +61,35 @@ const DashboardSideMenu = () => {
         },
     ]
     return (
-        <div className=''>
+        <div className='flex flex-col h-[90vh] pb-10 justify-between'>
+            <div>
             <div className={`${theme ? 'border-gray-700' : 'border-gray-400'} mb-2 border-b pb-2 `}>
-                <Typography variant="h5" className={`${theme ? 'text-white' : 'text-black'}`}>
-                    মেনু
-                </Typography>
-            </div>
-            <List className='p-0'>
+                            <Typography variant="h5" className={`${theme ? 'text-white' : 'text-black'}`}>
+                                মেনু
+                            </Typography>
+                        </div>
+                        <List className='p-0'>
 
-                {
-                    linkData?.map((itm) =>
-                        <Link className='w-full  relative h-[40px] rounded-xl mt-2' key={itm?.icon} to={itm?.link}>
-                            <Button className={`${theme ? 'text-gray-500 hover:bg-gray-800 hover:text-blue-400' : 'text-blue-900 hover:bg-gray-100 hover:text-blue-700 bg-transparent shadow-none'} w-full h-full text-md mb-3 flex items-center px-1 py-0  gap-2 hover:rounded duration-200`}>
-                                <ListItem className='flex gap-3'>
-                                    <ListItemPrefix>
-                                        <img src={itm?.icon} className="text-2xl" />
-                                    </ListItemPrefix>
-                                    {itm?.name}
-                                </ListItem>
-                            </Button>
-                        </Link>
-                    )
-                }
-            </List>
-            
+                            {
+                                linkData?.map((itm) =>
+                                    <Link className='w-full  relative h-[40px] rounded-xl mt-2' key={itm?.icon} to={itm?.link}>
+                                        <Button className={`${theme ? 'text-gray-500 hover:bg-gray-800 hover:text-blue-400' : 'text-blue-900 hover:bg-gray-100 hover:text-blue-700 bg-transparent shadow-none'} w-full h-full text-sm mb-3 flex items-center px-1 py-0  gap-2 hover:rounded duration-200`}>
+                                            <ListItem className='flex gap-3'>
+                                                <ListItemPrefix>
+                                                    <img src={itm?.icon} className="text-2xl" />
+                                                </ListItemPrefix>
+                                                {itm?.name}
+                                            </ListItem>
+                                        </Button>
+                                    </Link>
+                                )
+                            }
+                        </List>
+            </div>
+            <button className="text-white   rounded-md hover:bg-[#ff0040]  duration-200 bg-[#ff0040be] w-full h-[40px] flex items-center justify-center gap-2">
+                  <IoPower className="text-lg" />
+                  Sign out
+                </button>            
         </div>
     );
 };

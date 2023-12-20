@@ -26,7 +26,7 @@ const NavBar = () => {
   }
   return (
     <div>
-      <nav className={`${theme ? 'bg-[#191d29] border-gray-700' : 'bg-white border-gray-100'} duration-300 border-gray-200 fixed w-full mt-0 z-10 border-b`}>
+      <nav className={`${theme ? 'bg-[#191d29] border-gray-700' : 'bg-white border-gray-100'} duration-300 border-gray-200 fixed w-full mt-0 z-[3000] border-b`}>
         <div className="max-w-screen-2xl flex flex-wrap items-center justify-between mx-auto p-4">
           <div className="flex gap-2 items-center">
             <Link to="/" className="flex items-center">
@@ -70,7 +70,12 @@ const NavBar = () => {
               </Dropdown.Header>
                
               <Dropdown.Item className="p-0 rounded-md mt-3"><button className="text-white rounded-md hover:bg-blue-600 duration-200 bg-blue-500 w-full h-[40px] flex items-center justify-center px-3 gap-2"><FaRegUser className="text-md" /> Profile</button></Dropdown.Item>
-              <Dropdown.Item className="p-0 rounded-md mt-2"><button className="text-white rounded-md hover:bg-blue-600 duration-200 bg-blue-500 w-full h-[40px] flex items-center justify-center gap-2"><IoPower className="text-lg" /> Sign out</button></Dropdown.Item>
+              <Dropdown.Item className="p-0 rounded-md mt-2">
+                <button className="text-white rounded-md hover:bg-[#ff0040]  duration-200 bg-[#ff0040be] w-full h-[40px] flex items-center justify-center gap-2">
+                  <IoPower className="text-lg" />
+                  Sign out
+                </button>
+              </Dropdown.Item>
             </Dropdown>
 
             <button
