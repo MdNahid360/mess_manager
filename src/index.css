@@ -98,3 +98,9 @@ td{
 .group\/head:first-child .group-first\/head\:last\:rounded-tr-lg:last-child {
     border-top-right-radius: 0px!important;
 }
+
+/* ? animated buttons */
+ 
+.g-btn-1:hover .g-move-bg{
+  transform: translateX(96%);
+}

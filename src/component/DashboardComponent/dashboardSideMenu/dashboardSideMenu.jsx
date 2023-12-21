@@ -86,7 +86,7 @@ const DashboardSideMenu = () => {
                             }
                         </List>
             </div>
-            <button className="text-white   rounded-md hover:bg-[#ff0040]  duration-200 bg-[#ff0040be] w-full h-[40px] flex items-center justify-center gap-2">
+            <button className="text-white   rounded-md hover:bg-[#347bbd]  duration-200 bg-[#158af8d5] w-full h-[40px] flex items-center justify-center gap-2">
                   <IoPower className="text-lg" />
                   Sign out
                 </button>            
