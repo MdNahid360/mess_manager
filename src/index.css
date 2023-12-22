@@ -104,3 +104,34 @@ td{
 .g-btn-1:hover .g-move-bg{
   transform: translateX(96%);
 }
+
+
+.input-dark{
+  border: 1px solid rgb(105, 109, 111)!important;
+  outline: none!important;
+  color: rgb(0, 129, 249);
+}
+.input-light{
+  border: 1px solid rgb(0, 145, 255)!important;
+  outline: none!important;
+}
+ 
+.bg-large-light{
+background-color: #e5e5f7;
+opacity: 0.8;
+background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+background-size: 10px 10px;
+}
+ 
+.bg-large-dark{
+   background-color: #1a1e28;
+opacity: 0.8;
+background-image: radial-gradient(#4b4c58 0.5px, #090911 0.5px);
+background-size: 10px 10px;
+}
+
+.custom-submit-btn{
+  font-size: 16px!important;
+  background-color: #0470d4!important;
+  font-weight: 400!important;
+}

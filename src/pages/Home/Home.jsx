@@ -91,6 +91,7 @@ import MembersTable from "../../component/DashboardComponent/membersTable/member
   autoPlay="true"
   controls
 /> */}
+
       <MembersTable />
     </div>
   );
