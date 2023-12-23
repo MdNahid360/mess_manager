@@ -8,7 +8,9 @@ const AuthProvider = ({ children }) => {
   const [open, setOpen] = useState(false);
   const [themeButton, setThemeButton] = useState(false);
   const [theme, setTheme] = useState(false);
+  const [tModalOpen, setTModalOpen] = useState(false);
 
+  const handleOpen = () => setTModalOpen(!tModalOpen);
   const themeAction = (theme) => {
     setTheme(theme)
     return localStorage.setItem('theme', theme);
@@ -37,6 +39,9 @@ const AuthProvider = ({ children }) => {
     setTheme,
     themeAction,
     user,
+    tModalOpen,
+    setTModalOpen,
+    handleOpen
   };
   return <AuthContext.Provider value={info}>{children}</AuthContext.Provider>;
 };
