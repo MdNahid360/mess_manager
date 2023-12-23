@@ -30,9 +30,6 @@ const MembersTable = () => {
                     </div>
                 </div>
              </div>
-             <div>
-                    <TableModal />          
-               </div>
             <Table style={{ backgroundColor: theme ? '#283038' : '', color: theme ? 'white' : 'black', }} className={`${theme ? 'border-1 border-gray-600' : 'border-1 border-gray-300'} w-full border rounded-lg   mt-5`}>
                 <Table.Head className={`${theme ? 'border-gray-700 bg-gray-800' : 'border-gray-300 bg-gray-200'} border-b`}>
                     <Table.HeadCell className={` ${theme ? 'text-gray-400' : 'text-gray-700'}`}>ছবি</Table.HeadCell>
@@ -44,7 +41,9 @@ const MembersTable = () => {
                     <Table.HeadCell className={`text-start ${theme ? 'text-gray-400' : 'text-gray-700'}`} >অ্যাকশন</Table.HeadCell>
                 </Table.Head>
                 <Table.Body className="divide-y p-0">
-                   
+                      <div>
+                    <TableModal />          
+               </div>
                      {
                          data?.map(data=>  <MemberTableRow key={data} data={data} />)
                     }
