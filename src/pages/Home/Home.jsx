@@ -86,8 +86,8 @@ import MembersTable from "../../component/DashboardComponent/membersTable/member
       {/* 2nd content */} 
       <br />
    
-{/* 
-      <MembersTable /> */}
+
+      <MembersTable />
     </div>
   );
 };
