@@ -17,7 +17,7 @@ const MembersTable = () => {
         'hello 3'
     ]
      return (
-        <div className={`${theme ? 'bg-[#1622254d]' : 'bg-[#ffffff00]'} overflow-x-auto   rounded  pb-40 border-gray-300 p-4`}>
+        <div className={`${theme ? 'bg-[#1622254d]' : 'bg-[#ffffff00]'}  rounded  pb-40 border-gray-300 p-4`}>
             <div className="flex md:flex-row flex-col md:gap-0 gap-2 items-center justify-between">
                 <h2 className={`${theme ? 'text-gray-100' : 'text-gray-900'}  font-semibold`}>
                     মিলের তালিকা
@@ -30,7 +30,9 @@ const MembersTable = () => {
                     </div>
                 </div>
              </div>
-            <Table style={{ backgroundColor: theme ? '#283038' : '', color: theme ? 'white' : 'black', }} className={`${theme ? 'border-1 border-gray-600' : 'border-1 border-gray-300'} w-full border rounded-lg   mt-5`}>
+
+             <div className="overflow-x-auto w-full h-full custom-transparent-scroll mt-6">
+                  <Table style={{ backgroundColor: theme ? '#283038' : '', color: theme ? 'white' : 'black', }} className={`${theme ? 'border-1 border-gray-600' : 'border-1 border-gray-300'} w-full border rounded-lg custom-transparent-scroll   mt-5`}>
                 <Table.Head className={`${theme ? 'border-gray-700 bg-gray-800' : 'border-gray-300 bg-gray-200'} border-b`}>
                     <Table.HeadCell className={` ${theme ? 'text-gray-400' : 'text-gray-700'}`}>ছবি</Table.HeadCell>
                     <Table.HeadCell className={` ${theme ? 'text-gray-400' : 'text-gray-700'}`}>নাম </Table.HeadCell>
@@ -49,6 +51,9 @@ const MembersTable = () => {
                     }
                 </Table.Body>
             </Table>
+             </div>
+           
+            
         </div>
     );
 };

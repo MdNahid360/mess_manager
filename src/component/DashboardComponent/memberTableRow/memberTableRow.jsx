@@ -22,12 +22,14 @@ const MemberTableRow = ({data}) => {
    
     return (
         <>
-                <TableModal open={open} setOpen={setOpen} data={data} />
-            <Table.Row className="w-full p-0">
-            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white px-2 py-0">
+             
+           
+         <Table.Row className="w-full p-0">
+                <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white px-2 py-0">
+                     <TableModal open={open} setOpen={setOpen} data={data} />
                 <img src="https://avatars.githubusercontent.com/u/76812306?v=4" alt="member" className="w-[40px] h-[40px] rounded" />
             </Table.Cell>
-            <Table.Cell className={`${theme ? 'text-gray-300' : 'text-gray-800'} whitespace-nowrap font-medium dark:text-white px-2 py-0`}>
+            <Table.Cell className={`${theme ? 'text-gray-300' : 'text-gray-800'} whitespace-wrap font-medium dark:text-white px-2 py-0`}>
                 {'Apple MacBook Pro 17"'}
             </Table.Cell>
             <Table.Cell>Sliver</Table.Cell>
