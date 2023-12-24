@@ -9,7 +9,6 @@ import overlay from '../../assets/img/overlay.jpg'
 import overlaySm from '../../assets/img/overflow_sm.jpg'
 import NavBar from "../../component/ShardComponent/Navbar/Navbar";
 import DashboardSideMenu from "../../component/DashboardComponent/dashboardSideMenu/dashboardSideMenu";
-import ReactAudioPlayer from 'react-audio-player';
 
 import intro from '../../assets/intro.mp3'
 //? framer motions effect variants

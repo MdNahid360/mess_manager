@@ -157,7 +157,6 @@ const RegistrationForm = () => {
                 </Button>
               </div>
             }
-
           </form>
         </div>
       </div>
