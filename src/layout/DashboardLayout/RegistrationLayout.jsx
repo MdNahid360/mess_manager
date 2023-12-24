@@ -2,7 +2,7 @@ import React from 'react';
 
 const RegistrationLayout = ({children}) => {
     return (
-        <div>Hi
+        <div>
             {children}
         </div>
     );
