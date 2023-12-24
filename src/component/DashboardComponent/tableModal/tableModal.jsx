@@ -29,8 +29,7 @@ const TableModal = ({ open, setOpen, data }) => {
                         variant="text"
                         color="red"
                         onClick={handleOpen}
-                        className="mr-1"
-                    >
+                        className="mr-1">
                         <span>Cancel</span>
                     </Button>
                     <Button variant="gradient" color="green" onClick={handleOpen}>
