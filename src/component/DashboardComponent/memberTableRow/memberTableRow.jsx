@@ -23,7 +23,7 @@ const MemberTableRow = ({data}) => {
     return (
         <>
             <Table.Row className="w-full p-0">
-                {/* <TableModal open={open} setOpen={setOpen} data={data} /> */}
+                <TableModal open={open} setOpen={setOpen} data={data} />
             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white px-2 py-0">
                 <img src="https://avatars.githubusercontent.com/u/76812306?v=4" alt="member" className="w-[40px] h-[40px] rounded" />
             </Table.Cell>
