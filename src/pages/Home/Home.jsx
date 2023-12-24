@@ -7,8 +7,7 @@ import market from '../../assets/img/dashboardCart/004-savings.png'
 import perMeal from '../../assets/img/dashboardCart/004-savings.png'
 import houseKeeper from '../../assets/img/dashboardCart/004-savings.png' 
 import MembersTable from "../../component/DashboardComponent/membersTable/membersTable";
-// import ReactAudioPlayer from 'react-audio-player';
-// import intro from '../../assets/intro.mp3'
+ 
 
  const Home = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -86,11 +85,7 @@ import MembersTable from "../../component/DashboardComponent/membersTable/member
       </div>
       {/* 2nd content */} 
       <br />
-                {/* <ReactAudioPlayer
-  src={intro}
-  autoPlay="true"
-  controls
-/> */}
+   
 
       <MembersTable />
     </div>
