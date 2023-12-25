@@ -32,15 +32,14 @@ const TableModal = ({ open, setOpen, data }) => {
     return (
         <div className="">
             <Dialog className={`${theme ? 'bg-large-dark' : 'bg-large-light'}  custom-scrollbar h-screen flex fixed w-screen items-center flex-col justify-center opacity-100 z-10 overflow-y-scroll px-2 rounded-none  `} open={open} handler={handleOpen}> {/* Added py-4 for top and bottom padding */}
-                <br /><br /><br />
-                <br /><br /><br />
+                <br /><br /><br /> 
                 <div className="md:d-none d-block opacity-0">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla  
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla  Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, optio nemo sint necessitatibus error eum alias voluptate laboriosam, quae ducimus consectetur reprehenderit? Quis nam perspiciatis aspernatur iusto consequatur tempora consequuntur?
                 </div>
                 <div className={`${theme ? 'bg-[#182129f2] border-[#95e2fb34] text-white' : ' bg-white border-[#2440497f] text-black'} custom-space border md:mt-0 backdrop-blur-m md:w-[480px] w-[97%] py-4 h-auto rounded-lg shadow-xl mx-auto`}>
                     <form onSubmit={handleSubmit}>
                         <DialogHeader className='flex flex-col justify-center'>
-                            <div className="md:w-[140px] hover-box duration-200 w-[130px]  md:h-[140px] h-[130px] rounded-full border-2 relative  border-gray-400">
+                            <div className="md:w-[140px] w-[100px] md:h-[140px] h-[100px]  hover-box duration-200  rounded-full border-2 relative  border-gray-400">
                                 <img src="https://avatars.githubusercontent.com/u/76812306?v=4" alt="member" className="object-cover w-full rounded-full h-full" />
                                 <div className='overflow-hidden opacity-0 hover-target duration-200 absolute w-full h-full bg-[#000000c3] rounded-full top-0 left-0 bottom-0 right-0 flex items-center justify-center cursor-pointer'>
                                     <IoCamera className='text-3xl opacity-[0.9] cursor-pointer' />
