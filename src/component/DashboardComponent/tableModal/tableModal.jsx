@@ -20,7 +20,7 @@ const TableModal = ({ openModal, setOpenModal, data }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-         Swal.fire({
+        Swal.fire({
             title: "",
             text: "user data update successfully",
             icon: "success"
@@ -38,33 +38,33 @@ const TableModal = ({ openModal, setOpenModal, data }) => {
                 <Modal.Body className={`${theme ? 'bg-[#2d3538] text-white' : 'bg-white text-black'} border-none pt-1`}>
                     <div className=''>
                         {/* items #4 */}
-                        <div className="flex flex-col ">
-                            <label for="text" className="mb-2 text-sm">নাম</label>
+                        <div className="flex flex-col mt-2">
+                            <label for="text" className="mb-1 text-sm">নাম</label>
                             <input name='name' placeholder='নাম লিখুন ' defaultValue={`নাম..... ${data}`} type="text" id="text" className="w-full  rounded-md border py-2 bg-[#2e424e9c]  backdrop-blur-md border-blue-600 px-2  hover:border-blue-500 focus:outline-none text-white focus:ring focus:ring-blue-500/40 active:ring active:ring-blue-500/40" />
                         </div>
-                        <div className="flex flex-col mt-6">
-                            <label for="text" className="mb-2 text-sm">নাম</label>
+                        <div className="flex flex-col mt-3">
+                            <label for="text" className="mb-1 text-sm">ছবি </label>
                             <input type="file" name='photo' className='bg-[#2e424e9c] rounded-md text-white' />
                         </div>
                         {/* items # */}
-                        <div className="flex flex-col mt-6">
-                            <label for="text" className="mb-2 text-sm">তারিখ</label>
+                        <div className="flex flex-col mt-3">
+                            <label for="text" className="mb-1 text-sm">তারিখ</label>
                             <input name='date' placeholder='তারিখ লিখুন ' defaultValue={`12/24/2023`} type="date" id="text" className="w-full  rounded-md border py-2 bg-[#2e424e9c]  backdrop-blur-md border-blue-600 px-2  hover:border-blue-500 focus:outline-none text-white focus:ring focus:ring-blue-500/40 active:ring active:ring-blue-500/40" />
                         </div>
-                        <div className="grid md:grid-cols-3 grid-cols-1 w-full gap-3  mt-3">
+                        <div className="grid md:grid-cols-3 grid-cols-1 w-full gap-3 md:mt-2  mt-0">
                             {/* items #1 */}
-                            <div className="flex flex-col mt-6">
-                                <label for="text" className="mb-2 text-sm">সকালের মিল</label>
+                            <div className="flex flex-col md:mt-0 mt-3">
+                                <label for="text" className="mb-1 text-sm">সকালের মিল</label>
                                 <input name='breakfast' placeholder='সকালের মিল  ' defaultValue={`সকালের মিল.....`} type="number" id="text" className="w-full  rounded-md border py-2 bg-[#2e424e9c]  backdrop-blur-md border-blue-600 px-2  hover:border-blue-500 focus:outline-none focus:ring focus:ring-blue-500/40 active:ring text-white active:ring-blue-500/40" />
                             </div>
                             {/* items #2 */}
-                            <div className="flex flex-col mt-6">
-                                <label for="text" className="mb-2 text-sm">দুপুরের মিল</label>
+                            <div className="flex flex-col ">
+                                <label for="text" className="mb-1 text-sm">দুপুরের মিল</label>
                                 <input name='lunch' placeholder='দুপুরের মিল  ' defaultValue={`দুপুরের মিল.....`} type="number" id="text" className="w-full  rounded-md border py-2 bg-[#2e424e9c]  backdrop-blur-md border-blue-600 px-2  hover:border-blue-500 text-white focus:outline-none focus:ring focus:ring-blue-500/40 active:ring active:ring-blue-500/40" />
                             </div>
                             {/* items #3 */}
-                            <div className="flex flex-col mt-6">
-                                <label for="text" className="mb-2 text-sm">রাতের মিল	</label>
+                            <div className="flex flex-col">
+                                <label for="text" className="mb-1 text-sm">রাতের মিল	</label>
                                 <input name='dinner' placeholder='রাতের মিল  ' defaultValue={`রাতের মিল	.....`} type="number" id="text" className="w-full  rounded-md border text-white py-2 bg-[#2e424e9c]  backdrop-blur-md border-blue-600 px-2  hover:border-blue-500 focus:outline-none focus:ring focus:ring-blue-500/40 active:ring active:ring-blue-500/40" />
                             </div>
                         </div>

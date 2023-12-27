@@ -3,6 +3,7 @@ import Home from "../../pages/Home/Home";
 import MainPage from "../../layout/MainLayout/MainLayout";
 import RegistrationLayout from "../../layout/DashboardLayout/RegistrationLayout";
 import RegistrationForm from "../../component/DashboardComponent/registrationForm/registrationForm";
+import ManageMeal from "../../component/DashboardComponent/manageMeal/manageMeal";
 
 export const router = createBrowserRouter([
   {
@@ -15,7 +16,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/manage_meal",
-        element: <Home />,
+        element: <ManageMeal />,
       },
       {
         path: "/meal_calculation",
@@ -47,7 +48,7 @@ export const router = createBrowserRouter([
   {
     path: '/registration',
     element: <RegistrationLayout>
-       <RegistrationForm />
+      <RegistrationForm />
     </RegistrationLayout>
   },
   {
