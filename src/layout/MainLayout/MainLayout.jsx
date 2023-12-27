@@ -41,28 +41,28 @@ const MainPage = () => {
   const [loader, setLoader] = useState(true);
   const [endLoad, setEndLoad] = useState(false);
   const [endOps, setEndOpa] = useState(false);
-  const {open, setOpen, theme} = useContext(AuthContext);
+  const { open, setOpen, theme } = useContext(AuthContext);
 
   setTimeout(() => {
     setLoader(false)
   }, 6000)
-// ? time is 6s
+  // ? time is 6s
   setTimeout(() => {
     setEndLoad(true)
   }, 5000)
-// ? time is 5s
+  // ? time is 5s
   setTimeout(() => {
     setEndOpa(true)
   }, 4000)
   // ? time is 4s
- 
 
-   return (
+
+  return (
     <>
       {loader ?
         <AnimatePresence mode="wait">
           <motion.div
-            
+
             style={{
               backgroundImage: `url('${overlay}')`,
               backgroundSize: 'cover',
@@ -148,7 +148,7 @@ const MainPage = () => {
                 exit="exit"
                 src={logo} alt="" />
               <div className={`${endOps ? 'scale-[0] opacity-0 duration-200' : ''} md:mt-12 mt-8 flex items-center gap-2 md:text-2xl text-xl font-bold`}>
-       
+
                 <motion.h2
                   variants={textShow}
                   initial="visible"
@@ -165,7 +165,7 @@ const MainPage = () => {
                   }}
                   className="text-white"> <span className="text-blue-400">মেস ম্যানেজারে</span> আপনাকে স্বাগতম </motion.h2>
               </div>
-            
+
 
               {
                 <div className={`${endOps ? 'opacity-0 duration-200' : ''}`}>
@@ -180,26 +180,26 @@ const MainPage = () => {
                     className={`${endOps ? 'opacity-0 duration-300' : 'opacity-100 duration-300'} text-white block text-2xl`}
                     repeat={Infinity}
                   />
-                 
+
                 </div>
               }
 
             </motion.div>
           </motion.div>
         </AnimatePresence> :
-        <div className="overflow-hidden">
+        <div className="overflow-hidden layout">
           <NavBar />
 
-          <div className="flex lg:h-[90vh] md:h-screen overflow-hidden mt-[70px]">
-            <aside className={`${open ?'lg:w-0 md:w-64 w-64':'lg:w-64 md:w-0 w-0' } ${theme ? 'bg-[#0f121c]' : 'bg-white'} duration-200 block md:relative fixed h-screen overflow-y-auto lg:block z-[2000]`}>
+          <div className="flex lg:h-[91.4vh] md:h-screen overflow-hidden mt-[70px]">
+            <aside className={`${open ? 'lg:w-0 md:w-64 w-64' : 'lg:w-64 md:w-0 w-0'} ${theme ? 'bg-[#0f121c]' : 'bg-white'} duration-200 block md:relative fixed h-screen overflow-y-auto lg:block z-[2000]`}>
               <div className="p-4  ">
-                 <DashboardSideMenu />
+                <DashboardSideMenu />
               </div>
-             </aside>
+            </aside>
 
             {/* Main Content */}
             <main className="flex-1 flex flex-col overflow-hidden">
-              <div className={`${theme ? 'bg-[#242730] text-white' : 'bg-gray-100 text-black'} duration-300 flex-1 overflow-x-hidden overflow-y-scroll  md:p-6 p-3`}>
+              <div className={`${theme ? 'bg-[#242730] text-white' : 'bg-gray-100 text-black'} duration-300 flex-1 overflow-x-hidden scroll-y-style   md:p-6 p-3`}>
                 <Outlet />
               </div>
             </main>
