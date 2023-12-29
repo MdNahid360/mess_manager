@@ -2,8 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import Home from "../../pages/Home/Home";
 import MainPage from "../../layout/MainLayout/MainLayout";
 import RegistrationLayout from "../../layout/DashboardLayout/RegistrationLayout";
-import RegistrationForm from "../../component/DashboardComponent/registrationForm/registrationForm";
-import ManageMeal from "../../component/DashboardComponent/manageMeal/manageMeal";
+import CommonRegistrationForm from "../../component/CommonComponents/commonRegistrationForm";
+import ManageMealList from "../../component/CommonComponents/admin/manageMealList/manageMealList";
 
 export const router = createBrowserRouter([
   {
@@ -16,7 +16,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/manage_meal",
-        element: <ManageMeal />,
+        element: <ManageMealList />,
       },
       {
         path: "/meal_calculation",
@@ -48,7 +48,7 @@ export const router = createBrowserRouter([
   {
     path: '/registration',
     element: <RegistrationLayout>
-      <RegistrationForm />
+      <CommonRegistrationForm />
     </RegistrationLayout>
   },
   {

@@ -9,19 +9,19 @@ import {
     Chip,
 } from "@material-tailwind/react";
 import { AiOutlineDashboard } from "react-icons/ai";
-import i1 from '../../../assets/icons/001-clipbboard.png';
-import i2 from '../../../assets/icons/002-letter.png';
-import i3 from '../../../assets/icons/003-social-media.png';
-import i4 from '../../../assets/icons/007-team.png';
-import i5 from '../../../assets/icons/Rectangle 8.png';
-import i6 from '../../../assets/icons/Rectangle 9.png';
-import i7 from '../../../assets/icons/Rectangle 10.png';
+import i1 from '../../assets/icons/001-clipbboard.png';
+import i2 from '../../assets/icons/002-letter.png';
+import i3 from '../../assets/icons/003-social-media.png';
+import i4 from '../../assets/icons/007-team.png';
+import i5 from '../../assets/icons/Rectangle 8.png';
+import i6 from '../../assets/icons/Rectangle 9.png';
+import i7 from '../../assets/icons/Rectangle 10.png';
 import { Link, NavLink } from 'react-router-dom';
-import { AuthContext } from '../../../context/AuthProvider';
 import { Button } from "@material-tailwind/react";
 import { IoPower } from 'react-icons/io5';
+import { AuthContext } from '../../context/AuthProvider';
 
-const DashboardSideMenu = () => {
+const Sidebar = () => {
     const { theme } = useContext(AuthContext);
     const linkData = [
         {
@@ -82,7 +82,7 @@ const DashboardSideMenu = () => {
                                         : isPending
                                             ? "pending"
                                             : `${theme ? 'text-gray-500 hover:bg-gray-800 hover:text-blue-400' :
-                                            'text-blue-900 hover:bg-gray-100 hover:text-blue-700 bg-transparent shadow-none'} 
+                                                'text-blue-900 hover:bg-gray-100 hover:text-blue-700 bg-transparent shadow-none'} 
                                             mb-2 rounded w-full h-full text-sm flex items-center px-1 py-0 hover:rounded duration-200`
                                 }>
                                 <Button className={`${theme ? '' : 'text-gray-600'} font-[600] bg-transparent w-full h-[40px] text-sm flex items-center shadow-none px-1 py-0 gap-2 hover:rounded duration-200`}>
@@ -93,7 +93,7 @@ const DashboardSideMenu = () => {
                                         {itm?.name}
                                     </ListItem>
                                 </Button>
-                            </NavLink> )}
+                            </NavLink>)}
                 </List>
             </div>
             <button className="text-white   rounded-md hover:bg-[#347bbd]  duration-200 bg-[#158af8d5] w-full h-[40px] flex items-center justify-center gap-2">
@@ -104,4 +104,4 @@ const DashboardSideMenu = () => {
     );
 };
 
-export default DashboardSideMenu;
+export default Sidebar;

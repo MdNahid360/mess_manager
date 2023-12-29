@@ -8,14 +8,15 @@ import {
     Input
 } from "@material-tailwind/react";
 import { Modal } from 'flowbite-react';
-import { AuthContext } from '../../../context/AuthProvider';
 import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/solid'
 import { IoCamera, IoExpandOutline } from 'react-icons/io5';
 import { FaRegEdit } from 'react-icons/fa';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 import 'sweetalert2/dist/sweetalert2.css';
+import { AuthContext } from '../../../../context/AuthProvider';
 
-const TableModal = ({ openModal, setOpenModal, data }) => {
+
+const EditMealListModal = ({ openModal, setOpenModal, data }) => {
     const { theme } = useContext(AuthContext);
 
     const handleSubmit = (e) => {
@@ -89,4 +90,4 @@ const TableModal = ({ openModal, setOpenModal, data }) => {
     );
 };
 
-export default TableModal;
+export default EditMealListModal;

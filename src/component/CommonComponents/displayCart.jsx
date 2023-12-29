@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../../../context/AuthProvider';
+import { AuthContext } from '../../context/AuthProvider';
 
 const DisplayCart = (props) => {
     const { img, subtitle, bg, color, price, link } = props;
