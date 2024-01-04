@@ -1,19 +1,32 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../../../context/AuthProvider';
 import PrimaryButton from '../../../../hooks/primaryButton';
 import { Datepicker, Table } from 'flowbite-react';
 import { IoSearch } from "react-icons/io5";
 import EditMealListModal from '../manageMealListTableRow/editMealListModal';
 import ManageMealListTableRow from '../manageMealListTableRow/manageMealListTableRow';
+import AddMealModal from './addMealModal';
+import ReactPaginate from 'react-paginate';
 
 
 const ManageMealList = () => {
     const { theme } = useContext(AuthContext);
-    const data = [
-        'hello 1',
-        'hello 2',
-        'hello 3'
-    ];
+    const [openModal, setOpenModal] = useState(false);
+    const [userData, setUserData] = useState([]);
+    const [currentPage, setCurrentPage] = useState(0);
+    const perPage = 2; // Set the number of items per page
+
+    useEffect(() => {
+        fetch('https://jsonplaceholder.typicode.com/users')
+            .then(res => res.json())
+            .then(data => setUserData(data))
+    }, [])
+
+    const displayedData = userData.slice(currentPage * perPage, (currentPage + 1) * perPage);
+    const handlePageChange = (selectedPage) => {
+        setCurrentPage(selectedPage.selected);
+    };
+
     return (
         <div className={`${theme ? 'bg-[#14171dfa]' : 'bg-white'} rounded-lg md:p-6 p-3`}>
             <div className={`${theme ? 'bg-[#1622254d]' : 'bg-[#ffffff00]'}  rounded  pb-10 border-gray-300 p-4`}>
@@ -27,7 +40,10 @@ const ManageMealList = () => {
                             <IoSearch />
                             <input type="text" className="border-none bg-transparent focus:border-0 focus:ring-0 focus:outline-none" placeholder='Search member...' />
                         </div>
-                        <PrimaryButton link={`/`} text={`+ মিল অ্যাড করুন `} variant={`${theme ? 'dark' : 'light'}`} />
+                        <div onClick={() => setOpenModal(!openModal)}>
+                            <PrimaryButton link={`/`} text={`+ মিল অ্যাড করুন `} variant={`${theme ? 'dark' : 'light'}`} />
+                        </div>
+                        <AddMealModal setOpenModal={setOpenModal} openModal={openModal} />
                     </div>
                 </div>
 
@@ -46,11 +62,22 @@ const ManageMealList = () => {
                             <div>
                                 <EditMealListModal />
                             </div>
-                            {
-                                data?.map(data => <ManageMealListTableRow key={data} data={data} />)
-                            }
+                            {displayedData.map(data => (
+                                <ManageMealListTableRow key={data.id} data={data} />
+                            ))}
                         </Table.Body>
+
                     </Table>
+
+                    <ReactPaginate
+                        pageCount={Math.ceil(displayedData.length / perPage)}
+                        pageRangeDisplayed={3} // Adjust as needed
+                        marginPagesDisplayed={1} // Adjust as needed
+                        onPageChange={handlePageChange}
+                        containerClassName="pagination"
+                        activeClassName="active"
+                    />
+
                 </div>
             </div>
         </div>

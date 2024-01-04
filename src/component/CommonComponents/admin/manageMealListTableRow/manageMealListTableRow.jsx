@@ -17,19 +17,19 @@ import { AuthContext } from '../../../../context/AuthProvider';
 const ManageMealListTableRow = ({ data }) => {
     const { theme, tModalOpen, setTModalOpen, } = useContext(AuthContext);
     const [openModal, setOpenModal] = useState(false);
-
+    console.log(data);
 
     return (
         <>
-            <EditMealListModal openModal={openModal} setOpenModal={setOpenModal} data={data} />
+            <EditMealListModal openModal={openModal} setOpenModal={setOpenModal} data="hello js" />
             <Table.Row className="w-full p-0">
                 <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white px-2 py-0">
                     <img src="https://avatars.githubusercontent.com/u/76812306?v=4" alt="member" className="w-[40px] h-[40px] rounded" />
                 </Table.Cell>
                 <Table.Cell className={`${theme ? 'text-gray-300' : 'text-gray-800'} whitespace-wrap font-medium dark:text-white px-2 py-0`}>
-                    {'Apple MacBook Pro 17"'}
+                    {data?.name}
                 </Table.Cell>
-                <Table.Cell>Sliver</Table.Cell>
+                <Table.Cell>"hello"</Table.Cell>
                 <Table.Cell>Laptop</Table.Cell>
                 <Table.Cell>$2999</Table.Cell>
                 <Table.Cell className=''>
