@@ -8,23 +8,25 @@ import ManageMealListTableRow from '../manageMealListTableRow/manageMealListTabl
 import AddMealModal from './addMealModal';
 import ReactPaginate from 'react-paginate';
 
-
 const ManageMealList = () => {
     const { theme } = useContext(AuthContext);
     const [openModal, setOpenModal] = useState(false);
     const [userData, setUserData] = useState([]);
     const [currentPage, setCurrentPage] = useState(0);
-    const perPage = 2; // Set the number of items per page
+
+    const itemsPerPage = 6;
+    const pageCount = Math.ceil(userData.length / itemsPerPage);
+    const offset = currentPage * itemsPerPage;
+    const currentData = userData.slice(offset, offset + itemsPerPage);
 
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/users')
+        fetch('users.json')
             .then(res => res.json())
             .then(data => setUserData(data))
     }, [])
 
-    const displayedData = userData.slice(currentPage * perPage, (currentPage + 1) * perPage);
-    const handlePageChange = (selectedPage) => {
-        setCurrentPage(selectedPage.selected);
+    const handlePageChange = ({ selected }) => {
+        setCurrentPage(selected);
     };
 
     return (
@@ -62,24 +64,33 @@ const ManageMealList = () => {
                             <div>
                                 <EditMealListModal />
                             </div>
-                            {displayedData.map(data => (
+                            {currentData.map(data => (
                                 <ManageMealListTableRow key={data.id} data={data} />
                             ))}
                         </Table.Body>
-
                     </Table>
-
-                    <ReactPaginate
-                        pageCount={Math.ceil(displayedData.length / perPage)}
-                        pageRangeDisplayed={3} // Adjust as needed
-                        marginPagesDisplayed={1} // Adjust as needed
-                        onPageChange={handlePageChange}
-                        containerClassName="pagination"
-                        activeClassName="active"
-                    />
+                    <div className="flex justify-center mt-4 ">
+                        <ReactPaginate
+                            previousLabel={<span className="flex bg-blue-600 text-white w-auto px-3 h-[40px] text-sm rounded-md items-center text-center">Previous</span>}
+                            nextLabel={<span className="flex bg-blue-600 text-white w-auto px-3 h-[40px] text-sm rounded-md items-center text-center">Next</span>}
+                            pageCount={pageCount}
+                            onPageChange={handlePageChange}
+                            containerClassName={'pagination centered-pagination'}
+                            previousLinkClassName={'pagination__link'}
+                            nextLinkClassName={'pagination__link'}
+                            disabledClassName={'pagination__link--disabled'}
+                            activeClassName={'pagination__link--active'}
+                            pageClassName={'pagination__page'}
+                            pageLinkClassName={'pagination__link'}
+                            style={{ backgroundColor: theme ? 'red' : 'blue', color: theme ? 'white' : 'black', transform: 'translateX(-50%)' }}
+                            breakClassName={'pagination__break'}
+                            breakLinkClassName={'pagination__link'}
+                        />
+                    </div>
 
                 </div>
             </div>
+
         </div>
     );
 };
