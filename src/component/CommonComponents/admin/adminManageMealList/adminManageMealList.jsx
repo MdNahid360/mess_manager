@@ -3,23 +3,27 @@ import { AuthContext } from '../../../../context/AuthProvider';
 import PrimaryButton from '../../../../hooks/primaryButton';
 import { Datepicker, Table } from 'flowbite-react';
 import { IoSearch } from "react-icons/io5";
+import EditMealListModal from '../manageMealList/editMealListModal';
+import ManageMealListTableRow from '../manageMealList/manageMealListTableRow';
 import ReactPaginate from 'react-paginate';
-import ManageMealListTableRow from './manageMealListTableRow';
-import EditMealListModal from './editMealListModal';
-import AddMealModal from './addMealModal'
-const ManageMealList = () => {
+import AdminMealListModal from './adminMealListModal';
+import AdminEditMealListModal from './adminEditMealListModal';
+import AdminManageMealListTableRow from './adminManageMealListTableRow';
+
+const AdminMealList = () => {
     const { theme } = useContext(AuthContext);
     const [openModal, setOpenModal] = useState(false);
     const [userData, setUserData] = useState([]);
     const [currentPage, setCurrentPage] = useState(0);
-
+    const [searchValue, setSearchValue] = useState('');
+ 
     const itemsPerPage = 6;
     const pageCount = Math.ceil(userData.length / itemsPerPage);
     const offset = currentPage * itemsPerPage;
     const currentData = userData.slice(offset, offset + itemsPerPage);
 
     useEffect(() => {
-        fetch('users.json')
+        fetch('https://jsonplaceholder.typicode.com/users')
             .then(res => res.json())
             .then(data => setUserData(data))
     }, [])
@@ -27,6 +31,12 @@ const ManageMealList = () => {
     const handlePageChange = ({ selected }) => {
         setCurrentPage(selected);
     };
+
+    const handleSearch = (e) => {
+        setSearchValue(e.target.value);
+    };
+
+    const filteredData = currentData.filter(data => data?.name.toLowerCase().includes(searchValue.toLowerCase()));
 
     return (
         <div className={`${theme ? 'bg-[#14171dfa]' : 'bg-white'} rounded-lg md:p-6 p-3`}>
@@ -39,12 +49,12 @@ const ManageMealList = () => {
                         <Datepicker style={{ width: '280px', backgroundColor: theme ? '#162225fa' : 'white', color: theme ? 'white' : 'black' }} />
                         <div style={{ backgroundColor: theme ? '#162225fa' : 'white', color: theme ? 'white' : 'black', }} className={`${theme ? 'border border-gray-200' : ''} w-[280px] flex items-center rounded-lg px-2 border`}>
                             <IoSearch />
-                            <input type="text" className="border-none bg-transparent focus:border-0 focus:ring-0 focus:outline-none" placeholder='Search member...' />
+                            <input type="text" className="border-none bg-transparent focus:border-0 focus:ring-0 focus:outline-none" placeholder='Search member...' onChange={handleSearch} />
                         </div>
                         <div onClick={() => setOpenModal(!openModal)}>
                             <PrimaryButton link={`/`} text={`+ মিল অ্যাড করুন `} variant={`${theme ? 'dark' : 'light'}`} />
                         </div>
-                        <AddMealModal setOpenModal={setOpenModal} openModal={openModal} />
+                        <AdminMealListModal setOpenModal={setOpenModal} openModal={openModal} />
                     </div>
                 </div>
 
@@ -61,10 +71,10 @@ const ManageMealList = () => {
                         </Table.Head>
                         <Table.Body className="divide-y p-0">
                             <div>
-                                <EditMealListModal />
+                                <AdminEditMealListModal />
                             </div>
-                            {currentData.map(data => (
-                                <ManageMealListTableRow key={data.id} data={data} />
+                            {filteredData.map(data => (
+                                <AdminManageMealListTableRow key={data.id} data={data} />
                             ))}
                         </Table.Body>
                     </Table>
@@ -90,8 +100,9 @@ const ManageMealList = () => {
                 </div>
             </div>
 
+
         </div>
     );
 };
 
-export default ManageMealList;
+export default AdminMealList;

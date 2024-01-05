@@ -4,7 +4,14 @@ import MainPage from "../../layout/MainLayout/MainLayout";
 import RegistrationLayout from "../../layout/DashboardLayout/RegistrationLayout";
 import CommonRegistrationForm from "../../component/CommonComponents/commonRegistrationForm";
 import ManageMealList from "../../component/CommonComponents/admin/manageMealList/manageMealList";
-
+import AdminLayout from "../../layout/AdminLyaout";
+import AdminMealList from "../../component/CommonComponents/admin/adminManageMealList/adminManageMealList";
+import AdminHome from "../../pages/adminHome/adminHome";
+import BazarManagementList from "../../component/CommonComponents/admin/bazarManagmentList/bazarManagementList";
+ 
+ 
+ 
+ 
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -44,6 +51,24 @@ export const router = createBrowserRouter([
       },
     ],
 
+  },
+  {
+    path : '/admin',
+    element : <AdminLayout />,
+    children : [
+      {
+        path : '/admin',
+        element: <AdminHome />
+      },
+      {
+        path: '/admin/manage_meal',
+        element : <AdminMealList />
+      },
+      {
+        path: '/admin/bazar-management',
+        element : <BazarManagementList />
+      },
+    ]
   },
   {
     path: '/registration',
